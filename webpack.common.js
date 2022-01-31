@@ -1,18 +1,18 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+// const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: './',
+   // publicPath: '/',
   },
   optimization: {
     minimize: true,
-    minimizer:[new CssMinimizerPlugin()],
+    // minimizer:[new CssMinimizerPlugin()],
     minimizer: [new TerserPlugin()],
   },
   module: {
@@ -40,6 +40,10 @@ module.exports = {
       },
       {
         test: /\.svg$/,
+        type: 'asset/inline',
+      },
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
       },
     ],
@@ -53,6 +57,6 @@ module.exports = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
-    new MiniCssExtractPlugin(),
+    // new MiniCssExtractPlugin(),
   ],
 };
