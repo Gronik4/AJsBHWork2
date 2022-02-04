@@ -1,4 +1,4 @@
 import './css/style.css';
 import './js/controller';
 import './js/app';
-import './img/goblin.png';
+// import './img/goblin.png';

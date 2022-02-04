@@ -1,9 +1,11 @@
+import img from '../img/goblin.png'
+
 export default class App {
   constructor() {
     this.placeFl = document.getElementById('pubf');
     this.hit = document.getElementById('hit');
     this.miss = document.getElementById('miss');
-    this.goblin = '<img class="goblin-img" src="img/goblin.png">';
+    this.goblin = `<img class="goblin-img" src="${img}">`;
 
     this.drowFields(4);
 
